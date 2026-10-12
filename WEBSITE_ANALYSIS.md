@@ -57,55 +57,252 @@
 ### OG / Social Share Image
 - **URL:** `https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1k40h51m31te8qa516ue1m861tg1g.png`
 
-### Color Palette
+### CSS Custom Properties (`:root`)
+```css
+:root {
+  --orange: #E8651A;
+  --orange-dark: #C4500E;
+  --gold: #C9A84C;
+  --gold-light: #F0DC8A;
+  --dark: #0d0d12;
+  --dark2: #111118;
+  --dark3: #1a1a24;
+  --light: #F9F8F6;
+  --white: #FFFFFF;
+  --text: #17171A;
+  --muted: #52525B;
+  --border: #E4E3DF;
+  --green: #16a34a;
+  --green-l: #4ade80;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --nav-w: 230px;
+  --sh: 0 1px 2px rgba(0,0,0,.04), 0 4px 20px rgba(0,0,0,.06);
+  --sh-lg: 0 8px 40px rgba(0,0,0,.14);
+}
+```
 
-| Role | Hex | Usage |
-|------|-----|-------|
-| **Primary / Accent** | `#E8651A` | CTA buttons, highlights, accents (orange) |
-| **Secondary** | `#007BFF` | Links, secondary actions (blue) |
-| **Background (dark)** | `#111111` | Main page background |
-| **Text Primary** | `#111111` | Body text on light sections |
-| **Link Color** | `#FEF0E6` | Link text on dark backgrounds (cream) |
-| **Button Text** | `#FFFFFF` | White text on primary buttons |
-| **Secondary Button BG** | `#E5E5E5` | Light gray button backgrounds |
-| **Secondary Button Text** | `#333333` | Dark text on secondary buttons |
+### Complete Color Palette
 
-**Color Scheme:** Dark theme overall
+#### Primary Brand Colors
+| Hex | CSS Var | Usage |
+|-----|---------|-------|
+| `#E8651A` | `--orange` | Primary CTA buttons, accents, highlights |
+| `#C4500E` | `--orange-dark` | Hover states for orange buttons |
+| `#C9A84C` | `--gold` | Badges, premium accents |
+| `#F0DC8A` | `--gold-light` | Gold text highlights via gradient |
+
+#### Dark Backgrounds
+| Hex | CSS Var | Usage |
+|-----|---------|-------|
+| `#0d0d12` | `--dark` | Darkest background |
+| `#111118` | `--dark2` | Dark section backgrounds |
+| `#1a1a24` | `--dark3` | Dark card backgrounds |
+| `#212121` | — | Nav panel background |
+| `#18181b` | — | Stats bar background |
+| `#1c1917` | — | Dark card variant |
+
+#### Light Backgrounds
+| Hex | CSS Var | Usage |
+|-----|---------|-------|
+| `#F9F8F6` | `--light` | Light section backgrounds |
+| `#FFFFFF` | `--white` | White |
+| `#faf9f6` | — | Off-white sections |
+| `#fefce8` | — | Yellow tint highlight cards |
+| `#fffbeb` | — | Amber tint |
+| `#f5f5f4` | — | Stone-50 |
+
+#### Text Colors
+| Hex | CSS Var | Usage |
+|-----|---------|-------|
+| `#17171A` | `--text` | Primary body text |
+| `#52525B` | `--muted` | Muted/secondary text |
+| `#a1a1aa` | — | Zinc-400 (text on dark) |
+| `#d4d4d8` | — | Zinc-300 (text on dark) |
+| `#71717a` | — | Zinc-500 |
+| `#3f3f46` | — | Zinc-700 |
+| `#27272a` | — | Zinc-800 |
+
+#### Borders & Dividers
+| Hex | CSS Var | Usage |
+|-----|---------|-------|
+| `#E4E3DF` | `--border` | Primary border |
+| `#e7e5e4` | — | Stone-200 |
+| `#d6d3d1` | — | Stone-300 |
+| `#27272a` | — | Dark borders |
+
+#### Green (Guarantee/Success)
+| Hex | CSS Var | Usage |
+|-----|---------|-------|
+| `#16a34a` | `--green` | Guarantee badge, success |
+| `#4ade80` | `--green-l` | Light green accent |
+| `#15803d` | — | Green-700 |
+| `#166534` | — | Green-800 |
+| `#14532d` | — | Green-900 |
+| `#052e16` | — | Green-950 |
+| `#f0fdf4` | — | Green-50 (light bg) |
+
+#### Other Accent Colors
+| Hex | Usage |
+|-----|-------|
+| `#eab308` | Yellow-500 (star ratings) |
+| `#fbbf24` | Amber-400 |
+| `#fcd34d` | Amber-300 |
+| `#ef4444` | Red (sale/urgency) |
+| `#dc2626` | Red-600 |
+| `#3b82f6` | Blue (Payhip default, overridden to orange via JS) |
+| `#F5C76A` | Gold hover in nav |
+
+**Color Scheme:** Dark theme overall with light sections for contrast
 
 ### Typography
 
-| Role | Font Family | Stack | Size |
-|------|-------------|-------|------|
-| **Headings** | DM Serif Display | `DM Serif Display, Georgia, serif` | H1: 52.8px, H2: 25.6px |
-| **Body** | DM Sans | `DM Sans, system-ui, sans-serif` | 14px |
-| **Additional** | Proxima Nova | (used in specific contexts) | varies |
+#### Font Families
+- **Primary sans:** `'DM Sans', system-ui, sans-serif` (`--sans`)
+- **Serif/display:** `'DM Serif Display', Georgia, serif` (`--serif`)
+- **Payhip base:** `proxima-nova` (Adobe Typekit, loaded by Payhip)
 
-**Font Source:** Google Fonts (DM Sans, DM Serif Display)
+#### Google Fonts Loaded
+```html
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+```
+
+#### Complete Type Scale
+| Element | Font | Size | Weight | Line-height | Notes |
+|---------|------|------|--------|-------------|-------|
+| Body | DM Sans | 16px | 400 | 1.6 | color: var(--text) |
+| H1 | DM Serif Display | clamp(1.55rem, 5.8vw, 3.3rem) | 700 | 1.1 | Responsive scaling |
+| H2 (.h2) | DM Serif Display | clamp(1.7rem, 4vw, 2.5rem) | — | 1.15 | |
+| H3 equiv | DM Serif Display | clamp(1.2rem, 3vw, 1.55rem) | — | 1.25 | |
+| Eyebrow | DM Sans | 0.72rem | 700 | — | uppercase, letter-spacing: 0.1em |
+| Sub (subtitle) | DM Sans | 1.05rem | 400 | 1.55 | color: var(--muted) |
+| Button text | DM Sans | 0.95rem | 700 | — | |
+| Hero sub | DM Sans | 1.08rem | 400 | 1.5 | |
+| Small/fine print | DM Sans | 0.82–0.88rem | 400–500 | — | |
+| Stat numbers | DM Serif Display | clamp(1.3rem, 3vw, 1.9rem) | — | 1 | |
+| Nav links | DM Sans | 0.92rem | 500 | — | |
 
 ### Component Design Tokens
 
-#### Primary Button
+#### Primary CTA Button (Hero)
 ```css
-background: #E8651A;
-color: #FFFFFF;
-border-radius: 14px;
-box-shadow: rgba(232, 101, 26, 0.38) 0px 8px 32px 0px;
+.btn-hero-main {
+  background: var(--orange);
+  color: #fff;
+  border-radius: 10px;
+  padding: 1rem 2.2rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(232,101,26,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-hero-main:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232,101,26,0.45);
+}
 ```
 
-#### Secondary Button
+#### Standard Orange Button
 ```css
-background: #E5E5E5;
-color: #333333;
-border-radius: 0px;
-box-shadow: rgba(0, 0, 0, 0.35) 0px 6px 28px 0px;
+.btn-orange {
+  background: var(--orange);
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  font-weight: 700;
+}
 ```
 
-#### General Spacing
-- Base unit: 4px
-- Border radius: 6px (general), 14px (buttons)
+#### Outline Button
+```css
+.btn-outline {
+  padding: 0.65rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+```
 
-### Framework
-- **CSS Framework:** Bootstrap
+### Layout System
+
+#### Container Widths
+```css
+.wrap     { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+.wrap-sm  { max-width: 760px;  margin: 0 auto; padding: 0 1.25rem; }
+.wrap-xs  { max-width: 600px;  margin: 0 auto; padding: 0 1.25rem; }
+```
+
+#### Full-Width Dark Section Technique
+```css
+.testi-section, .why-section, .bonus-section, .tv-section, .curriculum-section {
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  background-color: var(--dark2) !important;
+}
+```
+
+#### Spacing Scale
+| Token | Value | Usage |
+|-------|-------|-------|
+| xs | 0.25rem (4px) | Tight gaps between inline elements |
+| sm | 0.5rem (8px) | Small padding inside chips/badges |
+| md | 0.75–1rem (12–16px) | Card inner padding, button padding |
+| lg | 1.25rem (20px) | Container side padding, gap between cards |
+| xl | 2rem (32px) | Section inner spacing |
+| 2xl | 2.5rem (40px) | Gap between major elements |
+| 3xl | 3rem (48px) | Mobile section padding |
+| 4xl | 4.5rem (72px) | Desktop section padding |
+
+#### Section Spacing Pattern
+```css
+/* Desktop */ padding: 4.5rem 0;
+/* Mobile */  padding: 3rem 0;
+/* Between elements */ margin-bottom: 2rem;
+/* Heading to content */ margin-bottom: 1.5rem;
+```
+
+#### Gap Patterns
+```css
+.hero-inner { gap: 3.5rem; }     /* Hero columns */
+/* Card grids */    gap: 1.5rem;  /* Standard card gap */
+/* Carousel */      gap: 1.25rem; /* Between carousel cards */
+/* Stat items */    gap: 2rem;    /* Between stat blocks */
+```
+
+### Responsive Breakpoints
+1. `1024px` + `pointer:coarse` — Payhip tablet
+2. `799px` — Payhip mobile
+3. **`768px`** — Primary custom mobile breakpoint
+4. `720px` — Secondary
+5. `640px` — Smaller adjustments
+6. `620px` / `600px` — Narrow phone
+7. `480px` — Small phone
+
+#### At 768px and below:
+- Hero switches to single column (`flex-direction: column`)
+- Nav panel converts to full-screen overlay
+- Sticky bottom CTA bar becomes visible
+- Carousels show 1 card instead of 2-3
+- Section padding reduces from 4.5rem to 3rem
+
+### Gradients
+1. **Orange divider line:** `linear-gradient(90deg, var(--orange), var(--gold))` — 3px height, 48px width
+2. **Green guarantee badge:** `linear-gradient(135deg, var(--green), #15803d)`
+3. **Hero ambient glow:** `radial-gradient(ellipse at 70% 50%, rgba(232,101,26,0.08) 0%, transparent 70%)`
+4. **Final CTA ambient glow:** `radial-gradient(ellipse at center, rgba(232,101,26,0.06) 0%, transparent 60%)`
+5. **Reveal badge gradient:** `linear-gradient(135deg, var(--orange), var(--gold))`
+6. **Orange button hover:** `linear-gradient(135deg, #E8651A, #C4500E)`
+7. **Dark section overlay:** `linear-gradient(180deg, var(--dark2) 0%, var(--dark) 100%)`
+8. **Gold text gradient:** `linear-gradient(90deg, var(--gold), var(--gold-light))` with `-webkit-background-clip: text`
+
+### Framework & Architecture
+- **Layout:** Pure Flexbox (no CSS Grid used anywhere)
+- **Payhip loads:** Bootstrap 4.4.1, jQuery 3.4.1, Popper.js 1.16.0
+- **Custom sections do NOT rely on Bootstrap classes** — all custom CSS
+- **Main custom CSS:** 516 rules in a single style block (~64,160 chars)
 - **Tone:** Playful
 - **Energy:** High
 - **Target Audience:** Enthusiasts of magic and card tricks
@@ -145,33 +342,107 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 6px 28px 0px;
 
 ## 4. HEADER / NAVIGATION
 
-### Structure (Consistent Across All Pages)
+### Payhip Default Header (Hidden)
+The default Payhip header (`header.header-section-wrapper`, `nav.navbar`) is hidden via a MutationObserver in JavaScript:
+```javascript
+var obs = new MutationObserver(function() {
+  var h = document.querySelector('header.header-section-wrapper');
+  if (h) h.style.display = 'none';
+});
+obs.observe(document.body, { childList: true, subtree: true });
+```
+
+### Custom Sticky Header
+- **Element:** `.sml-header-bar` (fixed positioning, z-index 500, height 70px)
 - **Logo:** Street Magic Lab logo (top-left), links to homepage
+- **Nav toggle button:** `#navToggle` (fixed, z-index 501)
+
+### Side Navigation Panel
+- **Element:** `#navPanel` (fixed left sidebar, width 230px, slides from left)
+- **Background:** `#212121`
+- **Links (with scroll tracking):**
+  - `#top` — Home
+  - `#curriculum` — Full Curriculum
+  - `#proof` — Student Reactions
+  - `#about` — About Sanad
+  - `#tv-shows` — TV Appearances
+  - `#bonuses` — Bonuses
+  - `#enroll` — Get Access
+  - `#faq` — FAQ
+  - Private Coaching (opens modal)
+- **Active state:** Scroll position tracked via `IntersectionObserver`, active link highlighted
+
+### Payhip Default Header (Other Pages)
+On non-custom pages, the standard Payhip header shows:
 - **Banner Image:** Full-width header image (the OG image, 1500px wide)
 - **Search bar:** "View all results" search functionality
 - **Cart icon:** Shopping cart with item count (badge showing "0")
 - **Login link:** Links to `payhip.com/BeginnerCardMagic/users/login`
 - **Mobile menu:** Hamburger menu on mobile
 
-### Sales Page Navigation (Anchor Links on /3-free-self-working-tricks)
-```
-Navigation
-⌂ Home
-★ Student Reactions
-✦ About Sanad
-▶ TV Appearances
-♠ Bonuses
-♣ Full Curriculum
-♦ Get Access
-? FAQ
-◇ Private Coaching
-```
-
 ---
 
 ## 5. HOMEPAGE CONTENT (streetmagiclab.com/)
 
-The homepage serves as the main storefront displaying all available products.
+The homepage is a custom-built landing page (NOT the default Payhip storefront). It mirrors the sales page structure but has distinct content — different hero headline, different pricing display, different promo code, and social media links.
+
+### Homepage vs Sales Page Differences
+| Element | Homepage (`/`) | Sales Page (`/3-free-self-working-tricks`) |
+|---------|---------------|-------------------------------------------|
+| Hero headline | "Magic Tricks for Beginners: Card, Coin & Street Magic" | "Learn Card Magic in 30 Days and Amaze Anyone" |
+| Hero eyebrow | "Seen on National TV" with dot indicator | "Free Magic Masterclass" |
+| Pricing display | "$47 ~~$61~~ (30% off)" | "Worth $160 / For Just: $47" |
+| Promo code | `MAGIC` (20% off) | `STREET25` (25% off) |
+| Hero video | Vimeo facade (desktop+mobile) | Gumlet player (24:38 masterclass) |
+| Social links | Instagram, YouTube, TikTok in footer | Not present |
+
+### Homepage Hero Structure
+```html
+<div class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Seen on National TV</div>
+      <div class="hero-video-wrap-mobile"><!-- Vimeo facade (mobile only) --></div>
+      <h1>Magic Tricks for Beginners: Card, Coin &amp; Street Magic</h1>
+      <p class="hero-sub">...</p>
+      <div class="hero-rating">...</div>
+      <div class="desktop-only-bullets"><!-- 3 bullet items --></div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-video-wrap"><!-- Vimeo facade (desktop) --></div>
+      <div class="hero-right-cta-desktop">
+        <a href="...order..." class="btn-hero-main">Start Learning Card Magic Today</a>
+        <div>$47 <span style="text-decoration:line-through">$61</span> (30% off)</div>
+        <div class="hero-trust-row">
+          <span class="trust-chip trust-chip-green">30-Day Guarantee</span>
+          <span class="trust-chip">Lifetime access</span>
+        </div>
+      </div>
+      <div class="hero-right-cta-mobile"><!-- same CTA for mobile --></div>
+    </div>
+  </div>
+</div>
+```
+
+### Homepage Section Order (with eyebrow labels)
+1. **Hero** — "Seen on National TV"
+2. **What You'll Learn** (`.wyl-section`)
+3. **Stats Bar** — dark bar with 4 stat items
+4. **Reviews Bar** — star ratings
+5. **Curriculum** (`.curriculum-section#curriculum`)
+6. **Testimonials** (`.testi-section#proof`) — carousel
+7. **Why This Course** (`.why-section`)
+8. **Instructor** (`.instructor-section#about`)
+9. **TV Shows** (`.tv-section#tv-shows`) — carousel
+10. **Bonuses** (`.bonus-section#bonuses`) — tabbed accordion
+11. **Guarantee/Enroll** (`.guarantee-section#enroll`)
+12. **FAQ** (`.faq-section#faq`) — accordion
+13. **Final CTA** (`.final-cta`)
+
+### Social Media Links (Homepage Only)
+- **Instagram:** streetmagiclab
+- **YouTube:** Sanad Diab channel
+- **TikTok:** streetmagiclab
 
 ### Products Listed on Homepage
 
@@ -430,12 +701,26 @@ Card Craft: Full System — 34 lessons + 9 bonus tricks
 
 ## 7. INTERACTIVE ELEMENTS & POPUPS
 
-### 7.1 Exit-Intent Popup (25% Discount)
-- **Trigger:** Mouse leaves viewport (exit intent)
+### 7.1 Exit-Intent Popup — Mystery Card Game (25% Discount)
+- **Element:** `#mcOverlay` overlay with modal
+- **Trigger:**
+  - Desktop: `mouseleave` event when cursor exits viewport top (`e.clientY <= 0`)
+  - Mobile: Fast upward scroll near top (currentY < 150, deltaY > 60, deltaTime < 300ms)
+  - Repeat prevention: `localStorage.getItem('mc_shown')`
 - **Headline:** "Wait: before you go, you've unlocked a Secret Discount"
 - **Interactive element:** "Pick a card to reveal exactly how much you save" with 3 card options (♠ ♥ ♦)
+
+#### 3D Card Flip Animation
+```css
+.mc-card { perspective: 600px; }
+.mc-card-inner { transform-style: preserve-3d; transition: transform 0.6s; }
+.mc-card.flipped .mc-card-inner { transform: rotateY(180deg); }
+.mc-card-front, .mc-card-back { backface-visibility: hidden; }
+.mc-card-back { transform: rotateY(180deg); }
+```
+
 - **Reveal:** All cards show 25% OFF
-- **Note:** "✦ Any card you pick reveals the same offer. Your choice is yours"
+- **Note:** "Any card you pick reveals the same offer. Your choice is yours"
 - **Discount code:** `STREET25`
 - **Discounted price:** $35.25
 - **Email capture form:** "Drop your details below and we'll send your code instantly"
@@ -558,6 +843,9 @@ Card Craft: Full System — 34 lessons + 9 bonus tricks
 
 ### Core Platform
 - **Payhip** — E-commerce platform, storefront builder, checkout, course hosting, blog, user accounts
+  - Theme: `enigma`
+  - Builder: `EditorV2`
+  - Environment key: `O3BeAoPmB5`
   - CDN: `payhip.com/cdn-cgi/image/format=auto/...`
   - Asset storage: `pe56d.s3.amazonaws.com/...`
   - Custom domain: streetmagiclab.com
@@ -567,8 +855,31 @@ Card Craft: Full System — 34 lessons + 9 bonus tricks
 | Service | Usage | IDs |
 |---------|-------|-----|
 | **Gumlet** | Free masterclass video (24:38) | Video: `697e02885ff8d4ab5d1e1188`, Collection: `697ced71bbfa4f281aefa3e6` |
-| **Vimeo** | Promo/VSL videos | `1179697740` (promo), `1186677822` (enhanced VSL) |
-| **YouTube** | Free trick tutorials (7 videos) | `DN37rG8T0vM`, `iUn2yT6zFrM`, `vVqlxlaP-6A`, `Hfyoa5cYSBc`, `y-YluOiteLM`, `2YADGp3TfT8`, `b7-GZqcY32U` |
+| **Vimeo** | Promo/VSL videos (9 embeds on homepage) | `1179697740`, `1186677822`, `7zR0hJYmRLk`, `YxPEWPZ_xHE`, `z4M-3K0aS7I`, `2kblp-4VWnY`, `G2RFlXX-WCg`, `dg7Cz0TW49M` + others |
+| **YouTube** | Free trick tutorials (10+ videos) | `DN37rG8T0vM`, `iUn2yT6zFrM`, `vVqlxlaP-6A`, `Hfyoa5cYSBc`, `y-YluOiteLM`, `2YADGp3TfT8`, `b7-GZqcY32U`, `xbJ9olMa5lw`, `znlXJZXVmVk`, `H5nszTP8NA8` |
+
+### Analytics & Tracking
+| Service | ID | Type |
+|---------|-----|------|
+| **Google Analytics 4** | `G-BT5GSR1E4G` | Site GA4 property |
+| **Google Analytics 4** | `G-49K529ZBBV` | Payhip platform GA4 |
+| **Universal Analytics** | `UA-34658431-1` | Legacy GA (Payhip) |
+| **Facebook Pixel** | `370293969737866` | FB/Meta Ads tracking |
+| **PostHog** | `phc_eUaGMMh9xTPUGkYkiGkC8l1sDwNp3N7PZJhxCRs9YY0` | Product analytics |
+
+### Email & Forms
+| Service | Usage | Details |
+|---------|-------|---------|
+| **ConvertKit** | Email capture (hero/footer/exit popup) | API Key: `19qfj5xRo0i-vDiJorDrtg`, Form ID: `9538639` |
+| **Formspree** | Coaching intake form | Endpoint: `https://formspree.io/f/mjgppnwk` |
+
+#### ConvertKit Integration
+```javascript
+CK_API_KEY = '19qfj5xRo0i-vDiJorDrtg';
+CK_FORM_ID = '9538639';
+// POST to: https://api.convertkit.com/v3/forms/9538639/subscribe
+// Body: { api_key, email, first_name, fields: { last_name }, tags: ['selectcard'] }
+```
 
 ### CDN & Infrastructure
 - **Cloudflare** — Via Payhip's CDN (`payhip.com/cdn-cgi/`)
@@ -576,6 +887,21 @@ Card Craft: Full System — 34 lessons + 9 bonus tricks
 - **Gumlet CDN** — `video.gumlet.io`, `assets.gumlet.io`
 - **Vimeo CDN** — `i.vimeocdn.com`
 - **YouTube CDN** — `i.ytimg.com`
+
+### Libraries Loaded (via Payhip)
+- jQuery 3.4.1
+- Bootstrap 4.4.1
+- Popper.js 1.16.0
+- SweetAlert v2.9
+- Mustache.js (cart/search template rendering)
+- js-cookie 3.0.1
+- hCaptcha
+- vanilla-lazyload 17.3.1
+- interact.js 1.9.20
+- Vimeo Player API
+- SimpleLightbox
+- Toastify v1.11
+- Swiper (carousel)
 
 ---
 
@@ -707,6 +1033,29 @@ Card Craft: Full System — 34 lessons + 9 bonus tricks
 https://payhip.com/cdn-cgi/image/format=auto,width={width}/https://pe56d.s3.amazonaws.com/{s3_key}
 ```
 
+### Payhip Platform Config (JavaScript)
+```javascript
+window.payhipShop = {
+  global: { /* 19 keys, 105 constants */ },
+  editor: { globalSettings: { /* color, cookie, font settings */ } },
+  lang: { /* 1785 localization strings */ }
+};
+```
+
+### Payhip CSS (18 style blocks total)
+1. **Block 1** (22,850 chars): Payhip header CSS
+2. **Block 5** (194,241 chars): Payhip enigma theme generated CSS
+3. **Block 6** (2,773 chars): Custom menu/cart/nav overrides
+4. **Block 8** (864 chars): Custom sticky header bar styles
+5. **Block 10** (64,160 chars): **MAIN custom CSS** — 516 rules covering all custom sections (most important for replication)
+
+### Replication Notes (Payhip-Specific)
+1. **Without Payhip:** Replace checkout system, cart, search, header, and theme CSS
+2. **Custom CSS override strategy:** The site hides Payhip's default header with MutationObserver and overrides Payhip's blue (#3b82f6) with orange (#E8651A) via JavaScript — a standalone replica would not need these hacks
+3. **The 64,160-char main CSS block** (style block 10) contains all 516 custom rules needed for the visual design — this is the most critical block to extract
+4. **No CSS Grid used anywhere** — everything is Flexbox-based
+5. **Bootstrap 4.4.1 is loaded by Payhip** but custom sections don't use Bootstrap classes
+
 ---
 
 ## 16. SALES FUNNEL STRATEGY ANALYSIS
@@ -744,7 +1093,357 @@ https://payhip.com/cdn-cgi/image/format=auto,width={width}/https://pe56d.s3.amaz
 
 ---
 
-## 17. REPLICATION CHECKLIST
+## 17. HTML COMPONENT PATTERNS
+
+### 17.1 Section Header (reused across ALL sections)
+```html
+<span class="eyebrow"><span class="eyebrow-dot"></span>LABEL TEXT</span>
+<span class="divider"></span>
+<h2 class="h2">Main Title <em>Italic Emphasis</em></h2>
+<p class="sub">Descriptive subtitle paragraph</p>
+```
+```css
+.eyebrow { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+.eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); display: inline-block; margin-right: 0.5rem; }
+.divider { background: linear-gradient(90deg, var(--orange), var(--gold)); height: 3px; width: 48px; border-radius: 2px; }
+```
+
+### 17.2 Trust Chip
+```html
+<span class="trust-chip trust-chip-green">30-Day Guarantee</span>
+<span class="trust-chip">Lifetime access</span>
+```
+
+### 17.3 YouTube Facade (Lazy Load)
+```html
+<div class="yt-facade" data-id="VIDEO_ID" onclick="loadYT(this)">
+  <img src="https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg" alt="..." loading="lazy">
+  <div class="yt-play"><!-- SVG play button --></div>
+</div>
+```
+
+### 17.4 Carousel
+```html
+<div class="carousel-viewport">
+  <div class="carousel-track" id="NAME-track">
+    <div class="carousel-card"><!-- card content --></div>
+  </div>
+</div>
+<div class="carousel-nav">
+  <button onclick="moveCarousel('NAME',-1)"><!-- left arrow --></button>
+  <div class="carousel-dots">
+    <span class="carousel-dot active" onclick="goToSlide('NAME',0)"></span>
+  </div>
+  <button onclick="moveCarousel('NAME',1)"><!-- right arrow --></button>
+</div>
+```
+
+### 17.5 FAQ Accordion Item
+```html
+<div class="faq-item">
+  <button class="faq-q" onclick="toggleFaq(this)">
+    <span>Question text here?</span>
+    <span class="faq-icon"><!-- plus/minus SVG --></span>
+  </button>
+  <div class="faq-a"><p>Answer text here.</p></div>
+</div>
+```
+```css
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-item.open .faq-a { max-height: 600px; }
+```
+
+### 17.6 Stat Item
+```html
+<div class="stat-item">
+  <div class="stat-num">4.9/5</div>
+  <div class="stat-lbl">Student Rating</div>
+</div>
+```
+
+### 17.7 Testimonial Card
+```html
+<div class="testi-card">
+  <div class="testi-stars"><!-- 5 star SVGs --></div>
+  <p class="testi-text">"Review quote text..."</p>
+  <div class="testi-author">
+    <div class="testi-avatar"><!-- initials or image --></div>
+    <div>
+      <div class="testi-name">Name</div>
+      <div class="testi-role">Verified Student</div>
+    </div>
+  </div>
+</div>
+```
+
+### 17.8 Curriculum Module Accordion
+```html
+<div class="curr-module">
+  <button class="curr-toggle" onclick="toggleSection('module-N')">
+    <span class="curr-module-title">Module N: Title</span>
+    <span class="curr-meta">X lectures - XX min</span>
+    <span class="curr-chevron"><!-- chevron SVG --></span>
+  </button>
+  <div class="curr-lectures" id="module-N">
+    <div class="curr-lecture" onclick="togglePreview('preview-N-M', event)">
+      <span class="curr-lecture-icon"><!-- play/lock icon --></span>
+      <span class="curr-lecture-title">Lecture Title</span>
+      <span class="curr-lecture-dur">5:23</span>
+    </div>
+  </div>
+</div>
+```
+
+### 17.9 Modal Overlay
+```html
+<div class="cm-overlay" id="coachingOverlay" onclick="if(event.target===this)closeCoachingModal()">
+  <div class="cm-modal">
+    <button class="cm-close" onclick="closeCoachingModal()">&times;</button>
+    <!-- modal content -->
+  </div>
+</div>
+```
+```css
+.cm-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+  display: none;
+}
+.cm-overlay.open { display: flex; align-items: center; justify-content: center; }
+.cm-modal {
+  background: #fff; border-radius: 16px; max-width: 520px; width: 90%;
+  box-shadow: var(--sh-lg); animation: modalUp 0.4s ease;
+}
+```
+
+### 17.10 Sticky Mobile Bar
+```html
+<div class="sticky-bar" id="stickyBar">
+  <a href="...order..." class="btn btn-orange" style="width:100%;justify-content:center">Start Learning Magic Now</a>
+  <p>$47 one-time - Lifetime access</p>
+</div>
+```
+
+### 17.11 Footer
+```html
+<footer class="cc-footer">
+  <div class="cc-foot-inner">
+    <a class="cc-foot-logo">Card<span>Craft</span></a>
+    <div class="cc-foot-links">
+      <a>Privacy Policy</a><a>Terms</a><a href="mailto:contact@streetmagiclab.com">Contact</a>
+    </div>
+    <p class="cc-foot-copy">&copy; 2026 Card Craft - Sanad Diab. All rights reserved.</p>
+  </div>
+</footer>
+```
+
+---
+
+## 18. CSS CLASS NAMING CONVENTIONS
+
+### Prefix System
+| Prefix | Section | Examples |
+|--------|---------|----------|
+| `hero-` | Hero section | `hero-inner`, `hero-left`, `hero-right`, `hero-eyebrow`, `hero-sub`, `hero-rating`, `hero-video-wrap`, `hero-trust-row` |
+| `nav-` | Navigation | `nav-link`, `nav-overlay` |
+| `stat-` | Stats bar | `stat-item`, `stat-num`, `stat-lbl` |
+| `testi-` | Testimonials | `testi-section`, `testi-card`, `testi-name`, `testi-role` |
+| `why-` | Why section | `why-section`, `why-card`, `why-icon` |
+| `inst-` | Instructor | `inst-card`, `inst-img`, `inst-info` |
+| `tv-` | TV shows | `tv-section`, `tv-card`, `tv-overlay` |
+| `bonus-` / `bonus1-` / `bonus2-` | Bonus sections | |
+| `curr-` | Curriculum | `curr-module`, `curr-lecture`, `curr-toggle` |
+| `guarantee-` | Guarantee | |
+| `rev-` / `review-` | Reviews | |
+| `faq-` | FAQ | `faq-item`, `faq-q`, `faq-a` |
+| `final-` | Final CTA | |
+| `sticky-` | Sticky bar | |
+| `cc-foot-` | Footer | `cc-footer`, `cc-foot-inner`, `cc-foot-logo`, `cc-foot-links`, `cc-foot-copy` |
+| `cm-` | Coaching modal | |
+| `mc-` | Mystery card popup | |
+| `cp-` | Course preview modal | |
+| `yt-` | YouTube facade | |
+| `popup-` | Popup styles | |
+| `sml-` | Street Magic Lab branded | |
+| `btn-` | Buttons | `btn-orange`, `btn-hero-main`, `btn-outline` |
+| `wyl-` | What You'll Learn | |
+| `carousel-` | Carousel | |
+
+### State Modifier Classes
+- `.open` — Accordion/modal open state
+- `.active` — Active nav link / tab
+- `.visible` — Scroll-revealed element
+- `.scrolled` — Header after scroll
+- `.selected` — Selected card/option
+- `.dimmed` — Non-selected cards dimmed
+- `.flipped` — 3D card flipped
+- `.picked` — Mystery card picked
+- `.done` — Completed step
+- `.copied` — Copy button success state
+
+### Utility Classes
+- `.wrap`, `.wrap-sm`, `.wrap-xs` — Container widths
+- `.reveal` — Scroll reveal target
+- `.desktop-only-bullets` — Desktop visibility
+- `.trust-chip` — Trust badge pill
+- `.eyebrow` — Section label
+- `.divider` — Orange gradient line
+- `.sub` — Subtitle paragraph
+
+---
+
+## 19. JAVASCRIPT PATTERNS
+
+### 19.1 YouTube Facade Lazy Loading
+```javascript
+function loadYT(el) {
+  var id = el.getAttribute('data-id');
+  var iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+  iframe.allow = 'autoplay;encrypted-media';
+  iframe.allowFullscreen = true;
+  el.innerHTML = '';
+  el.appendChild(iframe);
+  el.classList.add('playing');
+}
+```
+
+### 19.2 CSS-Based Carousel
+```javascript
+function updateCarousel(name) {
+  var track = document.getElementById(name + '-track');
+  track.style.transform = 'translateX(-' + (state.idx * (cardW + gap)) + 'px)';
+  // CSS: transition: transform 0.4s cubic-bezier(.4,0,.2,1)
+}
+function moveCarousel(name, dir) { /* increment/decrement index, clamp, updateCarousel */ }
+function goToSlide(name, idx) { /* jump to specific slide */ }
+```
+
+### 19.3 Scroll-Reveal Animation
+```javascript
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(function(el) {
+  revealObserver.observe(el);
+});
+```
+```css
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+```
+
+### 19.4 FAQ Accordion (One-at-a-Time)
+```javascript
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+```
+
+### 19.5 Scroll-Tracking Side Nav
+```javascript
+window.addEventListener('scroll', function() {
+  var sections = ['top','curriculum','proof','about','tv-shows','bonuses','enroll','faq'];
+  sections.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top <= 200 && rect.bottom > 200) {
+        document.querySelectorAll('.nav-link').forEach(function(l) { l.classList.remove('active'); });
+        document.querySelector('.nav-link[data-section="' + id + '"]').classList.add('active');
+      }
+    }
+  });
+});
+```
+
+### 19.6 Dynamic Payhip Color Override
+```javascript
+document.querySelectorAll('*').forEach(function(el) {
+  var cs = getComputedStyle(el);
+  if (cs.backgroundColor === 'rgb(59, 130, 246)') { // #3b82f6 Payhip blue
+    el.style.backgroundColor = 'var(--orange)';
+  }
+});
+```
+
+### 19.7 Multi-Step Coaching Modal
+```javascript
+function openCoachingModal() { /* show overlay, reset to step 1 */ }
+function cmNext() { /* validate current step, advance to next */ }
+function cmBack() { /* go to previous step */ }
+function cmSubmit() {
+  // POST to: https://formspree.io/f/mjgppnwk
+  // Collects: name, email, experience, goals, preferred_time
+}
+```
+
+### 19.8 Keyframe Animations (8 total)
+| Name | Purpose |
+|------|---------|
+| `pulse` | CTA button pulsing scale |
+| `pulseTag` | Tag badge pulsing |
+| `popupBlink` | Popup attention blink |
+| `fadeIn` | Generic fade in |
+| `modalUp` | Modal slide up from bottom |
+| `mcPhaseIn` | Mystery card phase in |
+| `mcOverlayIn` | Mystery card overlay fade |
+| `mcModalIn` | Mystery card modal entrance |
+| `spin` | Loading spinner rotation |
+
+---
+
+## 20. DOM STRUCTURE MAP
+
+### Major DOM Sections (in order)
+```
+<body>
+  ├── header.header-section-wrapper (Payhip default — hidden via MutationObserver)
+  ├── nav.navbar (Payhip default — hidden)
+  ├── .sml-header-bar (custom sticky header, fixed, z-500, h:70px)
+  ├── #navToggle (fixed nav toggle button, z-501)
+  ├── #navPanel (fixed left sidebar, w:230px, slides from left)
+  ├── .hero#top > .hero-inner (flex row: 48%/flex-1 split)
+  │   ├── .hero-left (text + CTA)
+  │   └── .hero-right (video facade + CTA)
+  ├── .wyl-section (What You'll Learn)
+  ├── Stats bar (inline-styled dark bar, 4 stat items)
+  ├── Reviews bar (inline-styled, star ratings)
+  ├── .curriculum-section#curriculum (accordion)
+  ├── .testi-section#proof (testimonial carousel)
+  ├── .why-section (Why This Course)
+  ├── .instructor-section#about
+  ├── .tv-section#tv-shows (TV carousel)
+  ├── .bonus-section#bonuses (tabbed accordion)
+  ├── .guarantee-section#enroll
+  ├── .faq-section#faq (accordion)
+  ├── .final-cta
+  ├── .sticky-bar#stickyBar (mobile only, fixed bottom)
+  ├── footer.cc-footer
+  └── Modals:
+      ├── #coachingOverlay (coaching modal)
+      ├── #mcOverlay (mystery card / exit-intent)
+      └── #cpOverlay (course preview)
+```
+
+### DOM Stats
+- 808 `<div>` elements
+- 260 `<span>` elements
+- 75 SVG elements
+- 65 buttons
+- 12 `<section>` elements
+
+---
+
+## 21. REPLICATION CHECKLIST
 
 To replicate this site, you need:
 
@@ -771,34 +1470,53 @@ To replicate this site, you need:
 - [ ] About instructor bio
 
 ### Design Implementation
-- [ ] Dark theme (background #111111)
-- [ ] DM Serif Display for headings (Google Fonts)
-- [ ] DM Sans for body text (Google Fonts)
-- [ ] Primary accent color #E8651A (orange)
-- [ ] Bootstrap framework
-- [ ] Responsive layout (mobile-first)
-- [ ] 14px base font size
-- [ ] 14px border-radius on CTA buttons
-- [ ] Orange glow shadow on CTA buttons
+- [ ] CSS custom properties (`:root` variables — see Section 2)
+- [ ] Dark theme (background `#0d0d12` / `#111118` / `#1a1a24`)
+- [ ] DM Serif Display for headings (Google Fonts — weights 400, italic)
+- [ ] DM Sans for body text (Google Fonts — weights 300–700, italic 400)
+- [ ] Primary accent color `#E8651A` (orange) with `#C4500E` hover
+- [ ] Gold accent `#C9A84C` / `#F0DC8A` for premium elements
+- [ ] Pure Flexbox layout (no CSS Grid)
+- [ ] Container widths: 1100px / 760px / 600px
+- [ ] Responsive breakpoints (768px primary, 7 total)
+- [ ] 16px base font size with `clamp()` responsive headings
+- [ ] 10px border-radius on CTA buttons
+- [ ] Orange glow shadow on CTA buttons (`0 4px 15px rgba(232,101,26,0.35)`)
+- [ ] Full-width dark section bleed technique (`100vw` + negative margins)
+- [ ] 8 gradient definitions (see Section 2)
+- [ ] Scroll-reveal animations (IntersectionObserver + `.reveal`/`.visible` classes)
 
 ### Interactive Features
-- [ ] Exit-intent popup with card-picking animation
+- [ ] Exit-intent popup with 3D card-flip animation (CSS perspective/rotateY)
 - [ ] Social proof notification popup (fake enrollment alerts)
-- [ ] Multi-step coaching inquiry form/modal
-- [ ] Accordion FAQ section
-- [ ] Testimonial carousel with arrows
-- [ ] Sticky bottom CTA bar
-- [ ] Anchor navigation (smooth scroll)
+- [ ] Multi-step coaching inquiry form/modal (3 steps, Formspree endpoint)
+- [ ] Accordion FAQ section (one-at-a-time, max-height transition)
+- [ ] Testimonial carousel with arrows (CSS translateX + cubic-bezier)
+- [ ] TV shows carousel
+- [ ] Sticky bottom CTA bar (mobile only, fixed bottom)
+- [ ] Side navigation panel with scroll-tracking active state
+- [ ] Custom sticky header (hides Payhip default via MutationObserver)
+- [ ] YouTube lazy-load facades (click-to-load iframe pattern)
 - [ ] Cookie consent banner
 - [ ] Video players (Gumlet, Vimeo, YouTube embeds)
+- [ ] Course preview modal (`#cpOverlay`)
+- [ ] Payhip blue-to-orange color override (JavaScript)
+- [ ] 9 keyframe animations (pulse, fadeIn, modalUp, etc.)
+
+### Email & Analytics
+- [ ] ConvertKit email capture integration (API key + form ID)
+- [ ] Formspree form submission (coaching modal)
+- [ ] Google Analytics 4 (`G-BT5GSR1E4G`)
+- [ ] Facebook Pixel (`370293969737866`)
+- [ ] PostHog product analytics
 
 ### E-Commerce Features
 - [ ] Shopping cart with badge counter
 - [ ] Multiple product listings
 - [ ] Course curriculum with expandable sections
 - [ ] Free preview functionality
-- [ ] Coupon code system
-- [ ] Multiple payment methods
+- [ ] Coupon code system (`STREET25` = 25%, `MAGIC` = 20%)
+- [ ] Multiple payment methods (Visa, Mastercard, PayPal, Discover, Maestro)
 - [ ] User login/registration
 - [ ] Order confirmation flow
 
@@ -809,6 +1527,7 @@ To replicate this site, you need:
 - [ ] Page titles and descriptions
 - [ ] Blog with categories
 - [ ] `noindex,indexifembedded` robots directive (Payhip default)
+- [ ] Social media links (Instagram, YouTube, TikTok)
 
 ---
 
